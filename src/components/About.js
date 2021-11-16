@@ -1,20 +1,41 @@
 // src/components/About.js
 import React from "react";
+import avatar from "../components/avatar.svg"
+import Typical from 'react-typical'
+
+import {ArrowRightIcon} from "@heroicons/react/solid";
 
 export default function About() {
     return (
         <section id="about">
-            <div className="container mx-auto flex px-10 py-20 md:flex-row flex-col items-center">
-                <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                    <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
-                        Hi, I'm Reed.
-                        <br className="hidden lg:inline-block" />I love to build amazing
-                        apps.
-                    </h1>
+            <div className="container mx-auto flex px-10 py-40 md:flex-row flex-col items-center">
+                <div className="lg:max-w-lg lg:w-full md:w-1/3 w-5/6 p-10 md:p-1 lg:p-10">
+                    <img
+                        className="object-cover object-center rounded-full p-4 sm:p-0 lg:p-4"
+                        alt="hero"
+                        src={avatar}
+                    />
+                </div>
+                <div className="lg:flex-grow md:w-2/3 lg:pl-8 md:pl-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                    <p className="text-4xl md:text-7xl sm:text-7xl mb-1 font-mono text-white">
+                        <Typical
+                            steps={[2000, 'Hello visitor', 1500, 'My name is Jonathan', 15000]}
+                            wrapper="p"
+                            loop={2}
+                        />
+                    </p>
+                    <p className="mt-2 sm:text-2xl text-2xl">
+                        <Typical
+                            steps={[
+                                9000, 'I am a junior front-end developer, an avid reader and a linux enthusiast.', 500,
+                            ]}
+                            wrapper="p"
+                        />
+                    </p>
+                    <h3 className="text-4xl">
+                        <br className="hidden lg:inline-block" />
+                    </h3>
                     <p className="mb-8 leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                        laborum quasi, incidunt dolore iste nostrum cupiditate voluptas?
-                        Laborum, voluptas natus?
                     </p>
                     <div className="flex justify-center">
                         <a
@@ -29,13 +50,7 @@ export default function About() {
                         </a>
                     </div>
                 </div>
-                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                    <img
-                        className="object-cover object-center rounded"
-                        alt="hero"
-                        src="./coding.svg"
-                    />
-                </div>
+
             </div>
         </section>
     );
