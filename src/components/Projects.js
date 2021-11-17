@@ -3,6 +3,7 @@ import { CodeIcon } from "@heroicons/react/solid";
 import React from "react";
 import { projects } from "../data";
 
+
 export default function Projects() {
     return (
         <section id="projects" className="text-gray-400 bg-gray-900 body-font">
@@ -13,7 +14,7 @@ export default function Projects() {
                         Projects I've Completed
                     </h1>
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-                        Projects I've done over the last 6 months to expand my knowledge and increase my knowledge
+                        Here you can check out some of my github projects.
                     </p>
                 </div>
                 <div className="flex flex-wrap m-4">
@@ -23,12 +24,7 @@ export default function Projects() {
                             key={project.image}
                             className="sm:w-1/2 w-100 p-4">
                             <div className="flex relative">
-                                <div className="absolute inset-0 w-full h-full object-cover object-center bg-blue-600 opacity-100 hover:opacity-10 delay-1000">
-                                    <p className="text-blue-200 text-5xl text-center font-bold relative px-8 py-10 inline-block place-self-center">
-                                        {project.title}
-                                    </p>
-                                </div>
-                                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+                                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 ">
                                     <h1 className="title-font text-lg font-medium text-white mb-3">
                                         {project.title}
                                     </h1>

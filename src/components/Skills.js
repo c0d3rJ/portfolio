@@ -1,8 +1,14 @@
 // src/components/Skills.js
 
 import { BadgeCheckIcon, ChipIcon } from "@heroicons/react/solid";
+import ProgressBar from "react-bootstrap/ProgressBar";
 import React from "react";
 import { skills } from "../data";
+import {LinearProgress} from "@mui/material";
+import Progress from "./ProgressBar";
+
+const skillsProgress = <ProgressBar now={skills.level} max={100} min={0} variant="success"/>;
+
 
 export default function Skills() {
   return (
@@ -14,19 +20,22 @@ export default function Skills() {
             Skills &amp; Technologies
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi sit
-            ipsa delectus eum quo voluptas aspernatur accusantium distinctio
-            possimus est.
           </p>
         </div>
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
           {skills.map((skill) => (
             <div key={skill} className="p-2 sm:w-1/2 w-full">
+              <ProgressBar now={50} max={100} min={0} variant="success"/>
               <div className="bg-gray-800 rounded flex p-4 h-full items-center">
                 <BadgeCheckIcon className="text-green-400 w-6 h-6 flex-shrink-0 mr-4" />
-                <span className="title-font font-medium text-white">
-                  {skill}
-                </span>
+                <div className="title-font font-medium text-white w-1/3 w-6 h-6">
+                  {skill.name}
+                </div>
+                <div className="w-2/3">
+                  <ProgressBar now={50} max={100} min={0} variant="success"/>
+                  <LinearProgress value={skill.level} variant={"determinate"}/>
+                </div>
+
               </div>
             </div>
           ))}

@@ -10,6 +10,7 @@ import Navbar2 from "./components/Navbar2";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Testimonials from "./components/Testimonials";
+import Form from "./components/Form";
 
 
 function App() {

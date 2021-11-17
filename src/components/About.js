@@ -8,7 +8,7 @@ import {ArrowRightIcon} from "@heroicons/react/solid";
 export default function About() {
     return (
         <section id="about">
-            <div className="container mx-auto flex px-10 py-40 md:flex-row flex-col items-center">
+            <div className="container mx-auto flex px-10 pb-40 lg:pt-40 md:flex-row flex-col items-center">
                 <div className="lg:max-w-lg lg:w-full md:w-1/3 w-5/6 p-10 md:p-1 lg:p-10">
                     <img
                         className="object-cover object-center rounded-full p-4 sm:p-0 lg:p-4"
