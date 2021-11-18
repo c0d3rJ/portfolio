@@ -8,6 +8,16 @@ export const projects = [
         image: "",
         live: "https://c0d3rj.github.io/020-monsters-rolodex",
         source: ""
+    },
+    {
+        title: "Portfolio Site",
+        subtitle: "Another Hosting of my Portfolio Site",
+        buildWith: "React",
+        description:
+            "Built with ReactJS and Tailwind CSS this is a Portfolio Site that can be used by a developer to share their work.",
+        image: "",
+        live: "https://c0d3rj.github.io/portfolio",
+        source: "https://github.com/c0d3rJ/portfolio"
     }
 ];
 
@@ -19,7 +29,7 @@ export const skills = [
     {name: "java", level: 45},
     {name: '.net', level: 30},
     {name: '.net core', level: 37},
-    {name: 'mongodb', level: 42}
+    {name: 'mongodb', level: 12}
 ];
 
 export const testimonials = [];

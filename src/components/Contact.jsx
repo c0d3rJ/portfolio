@@ -8,7 +8,9 @@ import {InboxIcon} from "@heroicons/react/solid";
 export default function Contact() {
     const [state, handleSubmit] = useForm("mgergpar");
     if (state.succeeded) {
-        return <p>Message Submitted</p>;
+        return (
+            <p>Message Submitted</p>
+        );
     }
 
     return (
@@ -23,7 +25,7 @@ export default function Contact() {
                 <form
                     name="contact"
                     onSubmit={handleSubmit}
-                    className=" md:max-w-screen-sm md:flex-col-reverse"
+                    className="md:max-w-screen-sm md:flex-col-reverse justify-self-center"
                 >
                     <div className="relative mb-4">
                         <label htmlFor="name" className="leading-7 text-sm text-gray-400">

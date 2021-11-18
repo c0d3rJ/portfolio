@@ -1,14 +1,74 @@
 // src/components/Skills.js
 
 import { BadgeCheckIcon, ChipIcon } from "@heroicons/react/solid";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import React from "react";
 import { skills } from "../data";
+import "react-step-progress-bar/styles.css";
+import { ProgressBar } from "react-step-progress-bar";
+import Step from "react-step-progress-bar";
+
+import { Progress } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
+
 import {LinearProgress} from "@mui/material";
-import Progress from "./ProgressBar";
+import {Box, lighten} from "@mui/material";
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import { makeStyles, withStyles} from '@mui/styles'
 
-const skillsProgress = <ProgressBar now={skills.level} max={100} min={0} variant="success"/>;
 
+function LinearProgressWithLabel(props) {
+  return (
+          <div className="mb-0" >
+            <LinearProgress variant="determinate" value={props.level}/>
+            <Progress percent={props.level} label={dynamicBar(props.level).teir} color={dynamicBar(props.level).colorName} />
+            <ProgressBar
+                percent={props.level}
+                filledBackground={dynamicBar(props.level).color}
+                text={dynamicBar(props.level).teir}
+                height={13}
+            >
+            </ProgressBar>
+          </div>
+  );
+}
+
+const ColorLinearProgress = withStyles({
+  colorPrimary: {
+    backgroundColor: '{dynamicBar().colorName}',
+  },
+  barColorPrimary: {
+    backgroundColor: '#00695c',
+  },
+})(LinearProgress);
+
+function dynamicBar(num) {
+  let dynamic=[ {color:""},{color: ""},{teir:""}];
+  if(num < 25){
+    dynamic.color="#0000ff";
+    dynamic.colorName='blue';
+    dynamic.teir="Novice";
+  } else if (num < 50 && num > 24){
+    dynamic.color="#00ff00";
+    dynamic.colorName='green';
+    dynamic.teir="Intermediate";
+  }
+  else if (num < 75 && num > 49){
+    dynamic.color="#ffff00";
+    dynamic.colorName='yellow';
+    dynamic.teir="Advanced";
+  }
+  else if (num < 100 && num > 74){
+    dynamic.color="#ff0000";
+    dynamic.colorName='red';
+    dynamic.teir="Expert";
+  }
+  else{
+    dynamic.color="linear-gradient(to right, #ccfb72, #f0bb31)";
+    dynamic.level="error";
+  }
+  return dynamic;
+}
 
 export default function Skills() {
   return (
@@ -25,15 +85,27 @@ export default function Skills() {
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
           {skills.map((skill) => (
             <div key={skill} className="p-2 sm:w-1/2 w-full">
-              <ProgressBar now={50} max={100} min={0} variant="success"/>
-              <div className="bg-gray-800 rounded flex p-4 h-full items-center">
-                <BadgeCheckIcon className="text-green-400 w-6 h-6 flex-shrink-0 mr-4" />
-                <div className="title-font font-medium text-white w-1/3 w-6 h-6">
-                  {skill.name}
-                </div>
-                <div className="w-2/3">
-                  <ProgressBar now={50} max={100} min={0} variant="success"/>
-                  <LinearProgress value={skill.level} variant={"determinate"}/>
+              <div className="bg-gray-800 rounded flex p-4 h-full items-center w-full">
+                <div className='w-full'>
+                  <p className="self-start font-medium text-white w-1/2 h-6">
+                    {skill.name}
+                  </p>
+                  <p className="self-end font-medium text-white w-1/2 h-6">
+                    {dynamicBar(skill.level).teir}
+                  </p>
+                  <div className="mb-0" >
+                    <ColorLinearProgress variant="determinate" value={skill.level}/>
+                    <LinearProgress variant="determinate" value={skill.level}/>
+                    <Progress percent={skill.level} label={dynamicBar(skill.level).teir} color={dynamicBar(skill.level).colorName} />
+                    <ProgressBar
+                        percent={skill.level}
+                        filledBackground={dynamicBar(skill.level).color}
+                        text={dynamicBar(skill.level).teir}
+                        height={13}
+                    >
+                    </ProgressBar>
+                  </div>
+
                 </div>
 
               </div>
