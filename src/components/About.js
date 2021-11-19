@@ -17,7 +17,7 @@ export default function About() {
                     />
                 </div>
                 <div className="lg:flex-grow md:w-2/3 lg:pl-8 md:pl-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                    <p className="text-4xl md:text-7xl sm:text-7xl mb-1 font-mono text-white">
+                    <p className="text-4xl md:text-7xl sm:text-7xl mb-1 font-mono dark:text-white">
                         <Typical
                             steps={[2000, 'Hello visitor', 1500, 'My name is Jonathan', 15000]}
                             wrapper="p"
@@ -45,7 +45,7 @@ export default function About() {
                         </a>
                         <a
                             href="#projects"
-                            className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
+                            className="ml-4 inline-flex dark:text-gray-400 dark:bg-gray-800 bg-gray-300 rounded dark:border-transparent border border-gray-700  py-2 px-6 focus:outline-none dark:hover:bg-gray-700 dark:hover:text-white hover:bg-gray-400 rounded text-lg">
                             See My Past Work
                         </a>
                     </div>

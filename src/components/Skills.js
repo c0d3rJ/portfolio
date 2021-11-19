@@ -3,27 +3,26 @@
 import { BadgeCheckIcon, ChipIcon } from "@heroicons/react/solid";
 import React from "react";
 import { skills } from "../data";
-import "react-step-progress-bar/styles.css";
-import { ProgressBar } from "react-step-progress-bar";
-import Step from "react-step-progress-bar";
+//import "react-step-progress-bar/styles.css";
+//import { ProgressBar } from "react-step-progress-bar";
+//import Step from "react-step-progress-bar";
 
-import { Progress } from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
+//import { Progress } from 'semantic-ui-react';
+//import 'semantic-ui-css/semantic.min.css';
 
-import {LinearProgress} from "@mui/material";
-import {Box, lighten} from "@mui/material";
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import { makeStyles, withStyles} from '@mui/styles'
+import { Line } from 'rc-progress';
+
+import ProgressBar from "@ramonak/react-progress-bar";
 
 
 function LinearProgressWithLabel(props) {
   return (
           <div className="mb-0" >
-            <LinearProgress variant="determinate" value={props.level}/>
-            <Progress percent={props.level} label={dynamicBar(props.level).teir} color={dynamicBar(props.level).colorName} />
+            {/*<LinearProgress variant="determinate" value={props.level}/>
+            <Progress percent={props.level} label={dynamicBar(props.level).teir} color={dynamicBar(props.level).colorName} />*/}
             <ProgressBar
                 percent={props.level}
+                unfilledBackground={dynamicBar(props.level).color}
                 filledBackground={dynamicBar(props.level).color}
                 text={dynamicBar(props.level).teir}
                 height={13}
@@ -32,15 +31,6 @@ function LinearProgressWithLabel(props) {
           </div>
   );
 }
-
-const ColorLinearProgress = withStyles({
-  colorPrimary: {
-    backgroundColor: '{dynamicBar().colorName}',
-  },
-  barColorPrimary: {
-    backgroundColor: '#00695c',
-  },
-})(LinearProgress);
 
 function dynamicBar(num) {
   let dynamic=[ {color:""},{color: ""},{teir:""}];
@@ -76,7 +66,7 @@ export default function Skills() {
       <div className="container px-5 py-10 mx-auto">
         <div className="text-center mb-20">
           <ChipIcon className="w-10 inline-block mb-4" />
-          <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4">
+          <h1 className="sm:text-4xl text-3xl font-medium title-font dark:text-white mb-4">
             Skills &amp; Technologies
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
@@ -85,25 +75,45 @@ export default function Skills() {
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
           {skills.map((skill) => (
             <div key={skill} className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-800 rounded flex p-4 h-full items-center w-full">
+              <div className="dark:bg-gray-800 bg-gray-300 rounded dark:border-transparent border border-gray-700 flex p-4 h-full items-center w-full">
                 <div className='w-full'>
-                  <p className="self-start font-medium text-white w-1/2 h-6">
-                    {skill.name}
-                  </p>
-                  <p className="self-end font-medium text-white w-1/2 h-6">
-                    {dynamicBar(skill.level).teir}
-                  </p>
+                  <div className="flex flex-wrap overflow-hidden">
+
+                    <div className="w-1/2 overflow-hidden">
+                      <p className="self-start font-medium dark:text-white w-1/2 h-6">
+                        {skill.name}
+                      </p>
+                    </div>
+
+                    <div className="w-1/2 overflow-hidden">
+                      <p className="self-end font-medium dark:text-white h-6 text-right">
+                        {dynamicBar(skill.level).teir}
+                      </p>
+                    </div>
+
+                  </div>
+
+
                   <div className="mb-0" >
-                    <ColorLinearProgress variant="determinate" value={skill.level}/>
-                    <LinearProgress variant="determinate" value={skill.level}/>
-                    <Progress percent={skill.level} label={dynamicBar(skill.level).teir} color={dynamicBar(skill.level).colorName} />
-                    <ProgressBar
+                    {/*<Line percent={[skill.level,100]} strokeLinecap={"square"} strokeColor={{'0%' : '#0000FF', '100%' : '#FF0000'}} strokeWidth={2}/>*/}
+                    {/*<div className='pb-1'>
+                      <ProgressBar
+                          completed={skill.level}
+                          bgColor={dynamicBar(skill.level).color}
+                          borderRadius={1}
+                          height={10}
+                          labelSize={8}
+                      />
+                    </div>*/}
+
+                    <Line
                         percent={skill.level}
-                        filledBackground={dynamicBar(skill.level).color}
-                        text={dynamicBar(skill.level).teir}
-                        height={13}
-                    >
-                    </ProgressBar>
+                        strokeLinecap={"square"}
+                        strokeColor={dynamicBar(skill.level).color}
+                        strokeWidth={2}
+                        trailColor={"#858585"}
+                    />
+
                   </div>
 
                 </div>

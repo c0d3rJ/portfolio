@@ -12,7 +12,8 @@ import Skills from "./components/Skills";
 
 function App() {
   return (
-    <main className="text-gray-500 bg-gradient-to-b from-gray-900 to-gray-600 body-font">
+    <main className="dark:text-gray-500 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-600 body-font text-gray-900 bg-gradient-to-b from-gray-300 to-gray-50 ">
+        {/*<main className="text-gray-500 bg-gradient-to-b from-gray-900 to-gray-600 body-font">*/}
         <Navbar />
         <About />
         <Projects />
