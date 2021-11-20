@@ -6,7 +6,7 @@ import avatar from "../components/avatar.svg";
 
 export default function Navbar() {
     return (
-        <header className="dark:bg-gray-800 bg-gray-200 md:sticky top-0 z-0">
+        <header className="dark:bg-gray-800 bg-gray-200 md:sticky top-0 z-10">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center font-large ">
                 <a className="title-font font-medium text-white mb-4 md:mb-0">
 

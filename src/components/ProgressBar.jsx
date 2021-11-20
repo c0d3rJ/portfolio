@@ -38,11 +38,11 @@ const Progress_bar = ({bgcolor,progress,height}) => {
 function change(e) {
     switch(true){
         case (e.value<=25):
-            Progress_bar.prototype.bgcolor= "e32424";
+            Progress_bar.prototype.bgcolor= "#e32424";
             break;
 
         case (e.value>25 && e.value<=50):
-            Progress_bar.prototype.bgcolor="e68e1c"
+            Progress_bar.prototype.bgcolor="#e68e1c"
             break;
 
         case (e.value>51 && e.value<=75):

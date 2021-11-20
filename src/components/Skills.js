@@ -33,24 +33,32 @@ function LinearProgressWithLabel(props) {
 }
 
 function dynamicBar(num) {
-  let dynamic=[ {color:""},{color: ""},{teir:""}];
+  let dynamic=[ {color:""},{color: ""},{teir:""},{monoColorBlue:""},{monoColorGreen:""}];
   if(num < 25){
-    dynamic.color="#0000ff";
-    dynamic.colorName='blue';
-    dynamic.teir="Novice";
-  } else if (num < 50 && num > 24){
     dynamic.color="#00ff00";
     dynamic.colorName='green';
+    dynamic.monoColorBlue='#609CE1';
+    dynamic.monoColorGreen='#EEF8E3';
+    dynamic.teir="Novice";
+  } else if (num < 50 && num > 24){
+    dynamic.color="#ffff00";
+    dynamic.colorName='yellow';
+    dynamic.monoColorBlue='#236AB9';
+    dynamic.monoColorGreen='#7FBD32';
     dynamic.teir="Intermediate";
   }
   else if (num < 75 && num > 49){
-    dynamic.color="#ffff00";
-    dynamic.colorName='yellow';
+    dynamic.color="#0000ff";
+    dynamic.colorName='blue';
+    dynamic.monoColorBlue='#133863';
+    dynamic.monoColorGreen='#496D1D';
     dynamic.teir="Advanced";
   }
   else if (num < 100 && num > 74){
     dynamic.color="#ff0000";
     dynamic.colorName='red';
+    dynamic.monoColorBlue='#091D34';
+    dynamic.monoColorGreen='#213409';
     dynamic.teir="Expert";
   }
   else{
