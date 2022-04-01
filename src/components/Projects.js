@@ -2,19 +2,18 @@
 import {ArrowRightIcon, CodeIcon} from "@heroicons/react/solid";
 import React from "react";
 import { projects } from "../data";
-import {BsGithub, BsInfo, BsInfoLg, Md1K} from "react-icons/all";
-import {CgWebsite} from "react-icons/all";
+import {BsGithub} from "react-icons/all";
+//import {CgWebsite, BsInfo, BsInfoLg, Md1K} from "react-icons/all";
 import {MdLaunch} from "react-icons/all";
 
 export default function Projects() {
     return (
         <section id="projects" className="dark:text-gray-400 dark:bg-gray-900 bg-gray-300 body-font">
-            <div className="lg:pt-32 md:pt-32"></div>
             <div className="container px-5 py-10 mx-auto  lg:px-40">
                 <div className="flex flex-col w-full mb-20 text-center">
                     <CodeIcon className="mx-auto inline-block w-10 mb-4" />
                     <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 dark:text-white">
-                        Projects I've Completed
+                        Projects I've Worked On
                     </h1>
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
                         Here you can check out some of my github projects.
@@ -45,6 +44,7 @@ export default function Projects() {
                                         ))}
                                     </div>
                                     <div className="flex flex-wrap  pt-4 pb-2">
+                                        { project.live ?
                                         <div className="">
                                             <a
                                                 href={project.live}
@@ -53,6 +53,10 @@ export default function Projects() {
                                                 <MdLaunch className="w-6 h-6 self-center"/>
                                             </a>
                                         </div>
+                                          :
+                                          <div className={" pt-0 pb-0"}></div>
+                                        }
+                                        { project.live ?
                                         <div className="pl-5">
                                             <a
                                                 href={project.source}
@@ -61,6 +65,16 @@ export default function Projects() {
                                                 <BsGithub className="w-6 h-6 self-center"/>
                                             </a>
                                         </div>
+                                          :
+                                          <div>
+                                              <a
+                                                href={project.source}
+                                                className="inline-flex hover:dark:text-white dark:text-white rounded-full border border-gray-700 hover:bg-blue-700 text-black py-2 px-2">
+
+                                                  <BsGithub className="w-6 h-6 self-center"/>
+                                              </a>
+                                          </div>
+                                        }
                                         {/*<div className="pl-5">
                                             <a
                                                 href={project.source}
