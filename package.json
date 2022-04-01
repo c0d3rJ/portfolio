@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "1.8.2",
   "private": true,
   "homepage": "https://c0d3rj.github.io/",
   "dependencies": {
@@ -54,10 +54,8 @@
     ]
   },
   "devDependencies": {
-    "@semantic-ui-react/craco-less": "^1.2.3",
     "autoprefixer": "^9.8.8",
     "postcss": "^7.0.39",
-    "semantic-ui-less": "^2.4.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }

@@ -8,7 +8,7 @@ export default function Navbar() {
     return (
         <header className="dark:bg-gray-800 bg-gray-200 md:sticky top-0 z-10">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center font-large ">
-                <a className="title-font font-medium text-white mb-4 md:mb-0">
+                <div className="title-font font-medium text-white mb-4 md:mb-0">
 
                     <a href="#about" className=" text-2xl">
                         <img
@@ -18,7 +18,7 @@ export default function Navbar() {
                             style={{ maxWidth: "100px" }}
                         />
                     </a>
-                </a>
+                </div>
                 <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-gray-700 flex flex-wrap items-center text-base md:justify-center md:text-xl">
                     <a href="#projects" className="mr-5 hover:dark:text-white hover:text-gray-500">
                         Past Work

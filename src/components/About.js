@@ -29,7 +29,7 @@ export default function About() {
                     <p className="mt-2 sm:text-2xl text-2xl">
                         <Typical
                             steps={[
-                                9000, 'I am a junior front-end developer, an avid reader and a linux enthusiast.', 500,
+                                9000, 'I am a junior developer, an avid reader and a linux enthusiast.', 500,
                             ]}
                             wrapper="p"
                         />
